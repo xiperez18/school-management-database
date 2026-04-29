@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Registration Form</title>
+</head>
+<body>
+
+    <h1>Parent and Guardian Registration</h1>
+    <p>Please complete the form below to create your account and link to your student.</p>
+
+    <form action="process_registration.php" method="POST">  <!==Connect to database here for inserting)  →
+
+        <fieldset>
+            <legend>Parent Information</legend>
+
+            <label for="p_firstname">First Name:</label>
+            <input type="text" id="p_firstname" name="p_firstname" required>
+            <br><br>
+
+            <label for="p_lastname">Last Name:</label>
+            <input type="text" id="p_lastname" name="p_lastname" required>
+            <br><br>
+
+            <label for="p_phone">Primary Phone Number:</label>
+            <input type="tel" id="p_phone" name="p_phone" required>
+            <br><br>
+
+            <label for="p_address">Home Address:</label><br>
+            <textarea id="p_address" name="p_address" rows="3" cols="30" required></textarea>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Student Association</legend>
+            <p>Enter your child's information to link your accounts.</p>
+
+            <label for="s_id">Student ID Number:</label>
+            <input type="text" id="s_id" name="s_id" required>
+            <br><br>
+
+            <label for="s_name">Student Full Name:</label>
+            <input type="text" id="s_name" name="s_name" required>
+            <br><br>
+
+            <label for="relationship">Relationship to Student:</label>
+            <select id="relationship" name="relationship">
+                <option value="mother">Mother</option>
+                <option value="father">Father</option>
+                <option value="guardian">Legal Guardian</option>
+                <option value="other">Other</option>
+            </select>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Account Security</legend>
+
+            <label for="p_email">Email (Your Username):</label>
+            <input type="email" id="p_email" name="p_email" required>
+            <br><br>
+
+            <label for="p_password">Create Password:</label>
+            <input type="password" id="p_password" name="p_password" required>
+            <br><br>
+
+            <label for="p_confirm_password">Confirm Password:</label>
+            <input type="password" id="p_confirm_password" name="p_confirm_password" required>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Register Account</button>
+        <button type="reset">Clear Form</button>
+
+    </form>
+
+    <footer>
+        <p><small>Already have an account? <a href="Login.html">Login here</a></small></p>
+    </footer>
+
+</body>
+</html>

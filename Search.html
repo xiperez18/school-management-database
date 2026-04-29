@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Students</title>
+</head>
+
+<body>
+
+    <h1>Search Students</h1>
+
+    <hr>
+
+    <!-- Navigation -->
+    <a href="Teacher.html">Back to Teacher Portal</a>
+
+    <hr>
+
+    <!-- Search Form -->
+    <h2>Search Criteria</h2>
+
+    <form>
+
+        <label for="studentID">Student ID:</label><br>
+        <input type="text" id="studentID" name="studentID"><br><br>
+
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="grade">Grade:</label><br>
+        <select id="grade" name="grade">
+            <option value="">--Select Grade--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+
+        <label for="status">Enrollment Status:</label><br>
+        <select id="status" name="status">
+            <option value="">--Select Status--</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select><br><br>
+
+        <input type="submit" value="Search">
+
+    </form>
+
+    <hr>
+
+    <!-- Results Section -->
+    <h2>Search Results</h2>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Primary Teacher</th>
+            <th>Status</th>
+            <th>View</th>
+        </tr>
+
+        <!-- Placeholder rows -->
+        <tr>
+            <td>101</td>
+            <td>Alice Brown</td>
+            <td>5</td>
+            <td>Ms. Johnson</td>
+            <td>Active</td>
+            <td><a href="student-profile.html">View Profile</a></td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>John Smith</td>
+            <td>4</td>
+            <td>Mr. Lee</td>
+            <td>Active</td>
+            <td><a href="student-profile.html">View Profile</a></td>
+        </tr>
+
+        <tr>
+            <td>103</td>
+            <td>Emma Davis</td>
+            <td>3</td>
+            <td>Ms. Clark</td>
+            <td>Inactive</td>
+            <td><a href="student-profile.html">View Profile</a></td>
+        </tr>
+
+        <!-- Example empty result row -->
+        <tr>
+            <td colspan="6" align="center">Results will be displayed here after search</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
