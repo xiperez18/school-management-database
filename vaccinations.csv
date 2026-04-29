@@ -1,0 +1,3 @@
+vaccineID,studentID,vaccineName,dateAdministered,status
+701,3,MMR,2016-05-20,Completed
+702,3,Polio,2016-05-20,Completed

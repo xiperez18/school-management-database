@@ -1,0 +1,6 @@
+personID,SSN,firstName,middleName,lastName,dateOfBirth,address,city,state,postalCode,email,personalNumber
+1,123456789,John,Quincy,Doe,1980-05-15,123 Maple St,Springfield,IL,62704,john.doe@email.com,555-0101
+2,987654321,Jane,Ann,Smith,1982-08-22,456 Oak Ave,Springfield,IL,62704,jane.smith@email.com,555-0102
+3,555443322,Billy,Bob,Smith,2015-03-10,456 Oak Ave,Springfield,IL,62704,billy.s@email.com,555-0103
+4,111223333,Sarah,Lee,Brown,1975-12-01,789 Pine Rd,Springfield,IL,62704,s.brown@school.edu,555-0104
+5,444556666,Robert,James,Wilson,1985-02-20,321 Elm St,Springfield,IL,62704,r.wilson@school.edu,555-0105
