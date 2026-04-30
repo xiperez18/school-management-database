@@ -12,7 +12,8 @@ if (!$student_id) {
 $sql = "DELETE FROM students WHERE student_id = $student_id";
 
 if ($conn->query($sql)) {
-    echo "✔ Student deleted successfully!";
+    echo "<h3 style='color:green;'>Student deleted successfully.</h3>";
+    echo "<p><a href='Teacher.php' style='display:inline-block;padding:10px 14px;background:#3498db;color:#fff;text-decoration:none;border-radius:4px;'>Back to Teacher Portal</a></p>";
 } else {
     echo "❌ Error deleting student: " . $conn->error;
 }
