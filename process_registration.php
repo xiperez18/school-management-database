@@ -36,7 +36,7 @@ if ($query->num_rows > 0) {
 $query->close();
 
 // Verify that the student exists before linking.
-$studentCheck = $conn->prepare('SELECT studentID FROM Students WHERE studentID = ?');
+$studentCheck = $conn->prepare('SELECT student_id FROM students WHERE student_id = ?');
 $studentCheck->bind_param('i', $s_id);
 $studentCheck->execute();
 $studentCheck->store_result();
@@ -73,7 +73,7 @@ try {
     $parentInsert->execute();
     $parentInsert->close();
 
-    $studentParentInsert = $conn->prepare('INSERT INTO StudentParents (studentID, parentID, relationship) VALUES (?, ?, ?)');
+    $studentParentInsert = $conn->prepare('INSERT INTO StudentParents (student_id, parentID, relationship) VALUES (?, ?, ?)');
     $studentParentInsert->bind_param('iis', $s_id, $parentID, $s_relationship);
     $studentParentInsert->execute();
     $studentParentInsert->close();

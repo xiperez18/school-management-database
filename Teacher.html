@@ -1,83 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0; padding: 24px; }
+        .wrap { max-width: 700px; margin: 0 auto; background: #fff; padding: 28px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+        h1 { margin-top: 0; color: #2c3e50; }
+        p { color: #555; }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 14px; margin-top: 20px; }
+        .card {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            background: #3498db;
+            padding: 18px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .card:hover { background: #2980b9; }
+    </style>
 </head>
-
 <body>
+    <div class="wrap">
+        <h1>Teacher Portal</h1>
+        <p>Select one of the student actions below.</p>
 
-    <h1>Teacher Portal</h1>
-
-    <hr>
-
-    <!-- Teacher Info Section -->
-    <h2>Welcome, Ms. Johnson</h2>
-    <p><strong>Teacher ID:</strong> T1001</p>
-    <p><strong>Subject:</strong> Mathematics</p>
-    <p><strong>Grade Level:</strong> 5</p>
-
-    <hr>
-
-    <!-- Navigation Menu -->
-    <h3>Navigation</h3>
-    <ul>
-        <li><a href="Search.html">Search Students</a></li>
-        <li><a href="Parent.html">Parent Registration</a></li>
-        <li><a href="Allergy.html">Allergy Form</a></li>
-        <li><a href="Medication.html">Medication Form</a></li>
-        <li><a href="Login.html">Logout</a></li>
-    </ul>
-
-    <hr>
-
-    <!-- Student List Section -->
-    <h3>My Students</h3>
-
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Student ID</th>
-            <th>Name</th>
-            <th>Grade</th>
-            <th>Enrollment Status</th>
-            <th>View</th>
-        </tr>
-
-        <!-- Placeholder rows (query results will go here later) -->
-        <tr>
-            <td>101</td>
-            <td>Alice Brown</td>
-            <td>5</td>
-            <td>Active</td>
-            <td><a href="student-profile.html">View Profile</a></td>
-        </tr>
-
-        <tr>
-            <td>102</td>
-            <td>John Smith</td>
-            <td>5</td>
-            <td>Active</td>
-            <td><a href="student-profile.html">View Profile</a></td>
-        </tr>
-
-        <tr>
-            <td>103</td>
-            <td>Emma Davis</td>
-            <td>5</td>
-            <td>Inactive</td>
-            <td><a href="student-profile.html">View Profile</a></td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <!-- Quick Actions Section -->
-    <h3>Quick Actions</h3>
-    <ul>
-        <li><a href="Search.html">Search for a Student</a></li>
-        <li><a href="Allergy.html">Add Allergy Information</a></li>
-        <li><a href="Medication.html">Add Medication Information</a></li>
-        <li><a href="Parent.html">Register Parent</a></li>
-    </ul>
-
+        <div class="grid">
+            <a class="card" href="addStudent.html">Add Student</a>
+            <a class="card" href="searchStudent.html">Search Students</a>
+            <a class="card" href="editStudent.html">Edit Student</a>
+            <a class="card" href="deleteStudent.html">Delete Student</a>
+        </div>
+    </div>
 </body>
 </html>

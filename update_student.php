@@ -2,21 +2,12 @@
 include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // DEBUG: show what is being sent
-    echo "<h3>DEBUG POST DATA:</h3>";
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
-    // Get ID (must exist)
     $student_id = $_POST['student_id'] ?? null;
 
     if (!$student_id) {
-        die("❌ ERROR: student_id is missing. Check your form hidden input.");
+        die("Student ID is missing.");
     }
 
-    // Get fields safely
     $first = $_POST['first_name'] ?? '';
     $last = $_POST['last_name'] ?? '';
     $gender = $_POST['gender'] ?? '';
@@ -25,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
 
-    // UPDATE QUERY
     $sql = "UPDATE students SET 
         first_name = '$first',
         last_name = '$last',
@@ -37,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         WHERE student_id = $student_id
     ";
 
-    // RUN QUERY
     if ($conn->query($sql)) {
-        echo "<br>✔ Student updated successfully!";
+        echo "<h3 style='color:green;'>Student updated successfully.</h3>";
+        echo "<p><a href='Teacher.html'>Back to Teacher Portal</a></p>";
     } else {
-        echo "<br>❌ SQL Error: " . $conn->error;
+        echo "<h3 style='color:red;'>Update failed: " . $conn->error . "</h3>";
     }
 
 } else {
-    echo "❌ Invalid request method.";
+    echo "Invalid request method.";
 }
 ?>
