@@ -36,8 +36,11 @@ if ($query->num_rows > 0) {
 $query->close();
 
 // Verify that the student exists before linking.
-$studentCheck = $conn->prepare('SELECT student_id FROM students WHERE student_id = ?');
-$studentCheck->bind_param('i', $s_id);
+$studentCheck = $conn->prepare('SELECT student_id FROM students WHERE student_id = ? OR studentID = ?');
+if (!$studentCheck) {
+    die('Database error during student lookup: ' . $conn->error);
+}
+$studentCheck->bind_param('ii', $s_id, $s_id);
 $studentCheck->execute();
 $studentCheck->store_result();
 $studentExists = $studentCheck->num_rows > 0;
@@ -73,7 +76,10 @@ try {
     $parentInsert->execute();
     $parentInsert->close();
 
-    $studentParentInsert = $conn->prepare('INSERT INTO StudentParents (student_id, parentID, relationship) VALUES (?, ?, ?)');
+    $studentParentInsert = $conn->prepare('INSERT INTO StudentParents (studentID, parentID, relationship) VALUES (?, ?, ?)');
+    if (!$studentParentInsert) {
+        throw new Exception('Database error while linking student to parent: ' . $conn->error);
+    }
     $studentParentInsert->bind_param('iis', $s_id, $parentID, $s_relationship);
     $studentParentInsert->execute();
     $studentParentInsert->close();

@@ -37,5 +37,15 @@ $_SESSION['user_email'] = $email;
 $_SESSION['user_role'] = $role;
 $_SESSION['parent_id'] = $parentID;
 
+if ($role === 'teacher') {
+    header('Location: Teacher.php');
+    exit;
+}
+
+if ($role === 'parent') {
+    header('Location: ParentPortal.php');
+    exit;
+}
+
 header('Location: Homepage.html');
 exit;

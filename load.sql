@@ -28,3 +28,7 @@ INSERT INTO StudentParents (student_id, parentID, relationship) VALUES
 
 INSERT INTO Users (email, passwordHash, role, parentID) VALUES
     ('parent@example.com', '$2y$10$WPqVx6j53wlvMZ9hXPE0w.h9jD57L7z5.J6Qw95AOFYeuDvvS3j2y', 'parent', 1);
+
+-- Demo teacher account (password: parent123)
+INSERT INTO Users (email, passwordHash, role, parentID) VALUES
+    ('teacher@example.com', '$2y$10$WPqVx6j53wlvMZ9hXPE0w.h9jD57L7z5.J6Qw95AOFYeuDvvS3j2y', 'teacher', NULL);
